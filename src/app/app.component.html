@@ -1,0 +1,77 @@
+
+
+
+
+<div class="container">
+  <div class="logo">
+    <img src="../assets/Logo.jpg" style="width: inherit;">
+  </div>
+
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Upload Image</h2>
+        <div class="form-group">
+          <label for="imageUpload">Select an image:</label>
+          <input type="file" (change)="onFileSelected($event)" accept="image/*">
+        
+          <img width="100%" *ngIf="imageUrl" [src]="imageUrl" class="image">
+        </div>
+       <div>
+        {{progress}}
+       </div>
+
+       <div>
+        {{text}}
+       </div>
+     
+     
+       <hr>
+       <div>
+         <h4>Image Uploaded</h4>
+       </div>
+       <div class="item-upload" *ngFor="let item of imageupload">
+         {{item}}
+       </div>
+       
+      </div>
+      <div class="col-md-4 validation">
+          
+          <div *ngIf="text">
+            <button type="button" class="btn btn-success" (click)="validate()">validate</button>
+          </div>
+          <br>
+
+          <table id="student" *ngIf="memdata.length > 0">
+            <tr>
+              <th>Name</th>
+            
+            
+            
+            </tr>
+            <tr *ngFor="let student of memdata" [ngClass]="(student.status == '1')?'present':'absent'">
+              <td>{{student.name}}</td>
+            </tr>
+          </table>
+      </div>     
+    </div>
+  </div>
+
+
+ 
+
+</div>
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet>
+
+
