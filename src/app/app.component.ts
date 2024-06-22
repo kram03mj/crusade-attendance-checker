@@ -3,6 +3,8 @@ import { createWorker } from 'tesseract.js';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
+import * as Tesseract from 'tesseract.js'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
